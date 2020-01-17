@@ -25,7 +25,8 @@ namespace NorthwindAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Categories>>> GetCategories()
         {
-            return await _context.Categories.ToListAsync();
+            var objList= await _context.Categories.ToListAsync();
+            return Ok(objList);
         }
 
         // GET: api/Categories/5
